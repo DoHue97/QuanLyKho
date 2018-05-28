@@ -15,6 +15,7 @@ namespace BaiTap2_QLKho
         public int SLHang;
         public float DTCanChua;
         public List<int> SLXuat = new List<int>();
+        public List<int> SLNhap = new List<int>();
         public void SetSL(int SLg)
         {
             SLHang = SLg;

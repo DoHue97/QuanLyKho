@@ -57,6 +57,7 @@ namespace BaiTap2_QLKho
                         {
                             kho[i].kv[j].NhapHang(tenkho, tenkho, sln);
                             kho[i].kv[j].SetSL(kho[i].kv[j].GetSL() + sln);
+                            kho[i].kv[j].SLNhap.Add(sln);
                             kho[i].kv[j].SetDT(kho[i].kv[j].GetDienTich() - sln * kho[i].kv[j].GetDTChua());
                         }
                         else Console.WriteLine("Khu vuc khong du chua!");
@@ -127,6 +128,18 @@ namespace BaiTap2_QLKho
                             Console.WriteLine("So luong hang xuat: " + kho[i].kv[j].SLXuat[k]);
                         }
         }
+        private static void PhieuNhap()
+        {
+            for (int i = 0; i < kho.Count; i++)
+                for (int j = 0; j < kho[i].kv.Count; j++)
+                    for (int k = 0; k < kho[i].kv[j].SLNhap.Count; k++)
+                        if (kho[i].kv[j].SLNhap[k] > 0)
+                        {
+                            Console.WriteLine("Phieu nhap cua " + kho[i].TenKho);
+                            Console.WriteLine("Ten hang nhap: " + kho[i].kv[j].TenHang);
+                            Console.WriteLine("So luong hang nhap: " + kho[i].kv[j].SLNhap[k]);
+                        }
+        }
         private static void Menu()
         {
             do
@@ -141,6 +154,7 @@ namespace BaiTap2_QLKho
                 Console.WriteLine("6. Xem mat hang");
                 Console.WriteLine("7. Xuat mat hang");
                 Console.WriteLine("8. Thong ke xuat hang");
+                Console.WriteLine("9. Thong ke nhap hang");
 
                 LC = Convert.ToInt16(Console.ReadLine());
 
@@ -170,8 +184,11 @@ namespace BaiTap2_QLKho
                     case 8:
                         PhieuXuat();
                         break;
+                    case 9:
+                        PhieuNhap();
+                        break;
                 }
-            } while (LC < 9);
+            } while (LC < 10);
         }
         static void Main(string[] args)
         {
