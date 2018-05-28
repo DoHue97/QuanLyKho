@@ -1,0 +1,6 @@
+F:\Hue\Work\BaiTap2_QLKho\BaiTap2_QLKho\bin\Debug\BaiTap2_QLKho.exe.config
+F:\Hue\Work\BaiTap2_QLKho\BaiTap2_QLKho\bin\Debug\BaiTap2_QLKho.exe
+F:\Hue\Work\BaiTap2_QLKho\BaiTap2_QLKho\bin\Debug\BaiTap2_QLKho.pdb
+F:\Hue\Work\BaiTap2_QLKho\BaiTap2_QLKho\obj\Debug\BaiTap2_QLKho.csprojResolveAssemblyReference.cache
+F:\Hue\Work\BaiTap2_QLKho\BaiTap2_QLKho\obj\Debug\BaiTap2_QLKho.exe
+F:\Hue\Work\BaiTap2_QLKho\BaiTap2_QLKho\obj\Debug\BaiTap2_QLKho.pdb
