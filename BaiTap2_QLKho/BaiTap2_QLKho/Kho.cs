@@ -30,10 +30,28 @@ namespace BaiTap2_QLKho
         }
         public void Xem()
         {
-            Console.WriteLine("Ten kho " + TenKho);
-            Console.WriteLine("Chieu dai " + CDai);
-            Console.WriteLine("Chieu rong " + CRong);
-            Console.WriteLine("So luong khu vuc " + SLKhu);            
+            for (int j = 0; j < kv.Count; j++)
+                if (kv[j].KTKVTrong() == false)
+                {
+                    Console.WriteLine("Ten kho " + TenKho);
+                    Console.WriteLine("Chieu dai " + CDai);
+                    Console.WriteLine("Chieu rong " + CRong);
+                    Console.WriteLine("So luong khu vuc " + SLKhu);
+                    kv[j].GetThongTin();
+                }
+                else Console.WriteLine("Khu vuc " + kv[j].TenKV + " trong");
         }
+        public void GetList()
+        {
+            for (int j = 0; j < kv.Count; j++)
+                if (kv[j].KTKVTrong() == false)
+                {
+                    Console.WriteLine("Ten kho " + TenKho);
+                    Console.WriteLine("Chieu dai " + CDai);
+                    Console.WriteLine("Chieu rong " + CRong);
+                    Console.WriteLine("So luong khu vuc " + SLKhu);
+                    kv[j].GetThongTin();
+                }
+        }       
     }
 }
