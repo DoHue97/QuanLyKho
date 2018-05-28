@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace BaiTap2_QLKho
         public string TenHang;
         public int SLHang;
         public float DTCanChua;
-       
+        public List<int> SLXuat = new List<int>();
         public void SetSL(int SLg)
         {
             SLHang = SLg;
@@ -65,8 +66,8 @@ namespace BaiTap2_QLKho
         }
         public void Xuat(string tenkho, string tenkhu, int slx)
         {
-            Console.Write("Nhap so luong hang: ");
-            SetSL(GetSL()-slx);
+            Console.Write("Nhap ten hang: ");
+            TenHang = Console.ReadLine();
         }
 
     }

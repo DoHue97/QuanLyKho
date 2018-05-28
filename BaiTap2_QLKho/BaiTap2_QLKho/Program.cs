@@ -89,13 +89,15 @@ namespace BaiTap2_QLKho
             tenkhu = Console.ReadLine();
             Console.Write("Nhap so luong can xuat: ");
             slx = Convert.ToInt32(Console.ReadLine());
+
             for (int i = 0; i < kho.Count; i++)
                 for (int j = 0; j < kho[i].kv.Count; j++)
                     if (tenkho == kho[i].TenKho && tenkhu == kho[i].kv[j].TenKV)
                         if (kho[i].kv[j].GetSL() >= slx)
                         {
-                            kho[i].kv[j].NhapHang(tenkho, tenkho, slx);
-                            kho[i].kv[j].SetSL(slx);
+                            kho[i].kv[j].Xuat(tenkho, tenkho, slx);
+                            kho[i].kv[j].SetSL(kho[i].kv[j].GetSL() - slx);
+                            kho[i].kv[j].SLXuat.Add(slx);
                             kho[i].kv[j].SetDT(kho[i].kv[j].GetDienTich() + slx * kho[i].kv[j].GetDTChua());
                         }
                         else Console.WriteLine("Kho khong co hang de xuat hoac so hang khong du.");
@@ -113,6 +115,18 @@ namespace BaiTap2_QLKho
                         kho[i].kv[j].GetThongTin();
             }
         }
+        private static void PhieuXuat()
+        {
+            for (int i = 0; i < kho.Count; i++)
+                for (int j = 0; j < kho[i].kv.Count; j++)
+                    for (int k = 0; k < kho[i].kv[j].SLXuat.Count; k++)
+                        if (kho[i].kv[j].SLXuat[k]>0)
+                        {
+                            Console.WriteLine("Phieu xuat cua " + kho[i].TenKho);
+                            Console.WriteLine("Ten hang xuat: " + kho[i].kv[j].TenHang);
+                            Console.WriteLine("So luong hang xuat: " + kho[i].kv[j].SLXuat[k]);
+                        }
+        }
         private static void Menu()
         {
             do
@@ -126,7 +140,7 @@ namespace BaiTap2_QLKho
                 Console.WriteLine("5. List kho hang");
                 Console.WriteLine("6. Xem mat hang");
                 Console.WriteLine("7. Xuat mat hang");
-
+                Console.WriteLine("8. Thong ke xuat hang");
 
                 LC = Convert.ToInt16(Console.ReadLine());
 
@@ -153,8 +167,11 @@ namespace BaiTap2_QLKho
                     case 7:
                         XuatKho();
                         break;
+                    case 8:
+                        PhieuXuat();
+                        break;
                 }
-            } while (LC < 8);
+            } while (LC < 9);
         }
         static void Main(string[] args)
         {
