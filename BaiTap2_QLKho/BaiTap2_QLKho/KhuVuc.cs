@@ -11,65 +11,62 @@ namespace BaiTap2_QLKho
     {
         public string TenKV;
         public float DTich;
-        public string TenHang;
         public int SLHang;
-        public float DTCanChua;
-        public List<int> SLXuat = new List<int>();
-        public List<int> SLNhap = new List<int>();
-        public void SetSL(int SLg)
+        public string status="Trong";
+
+        public HangHoa Hang = new HangHoa();
+        public void SetStatus(string stt)
         {
-            SLHang = SLg;
+            status = stt;
         }
-        public int GetSL()
+        public string GetStatus()
+        {
+            return status;
+        }
+        public int GetSLHang()
         {
             return SLHang;
+        }
+        public void SetSLHang(int sl)
+        {
+           SLHang=sl;
+        }
+        public float GetDTich()
+        {
+            return DTich;
         }
         public void SetDT(float dientich)
         {
             DTich = dientich;
         }
-        public float GetDienTich()
-        {
-            return DTich;
-        }
-        public float GetDTChua()
-        {
-            return DTCanChua;
-        }
-        public string GetTenHang()
-        {
-            return TenHang;
-        }
         public bool KTKVTrong()
         {
-            if (GetSL() <= 0)
+            if (GetSLHang() <= 0)
                 return true;
             else return false;
-        } 
-        public void GetThongTin()
-        {
-            Console.WriteLine("Ten khu: " + TenKV);
-            Console.WriteLine("Dien tich con: " + GetDienTich());
-            Console.WriteLine("Ten mat hang: " + GetTenHang());
-            Console.WriteLine("So luong mat hang: " + GetSL());
         }
         public void NhapKhu()
         {
             Console.Write("Nhap ten khu: ");
             TenKV = Console.ReadLine();
         }
-        public void NhapHang(string tenkho, string tenkhu,int sln)
+        public void HienThiKhu()
         {
-            Console.Write("Nhap ten hang: ");
-            TenHang = Console.ReadLine();
-            Console.Write("Nhap dien tich can chua: ");
-            DTCanChua = float.Parse(Console.ReadLine());
+            Console.WriteLine("Ten khu: " + TenKV);
+            Console.WriteLine("So luong hang: " + SLHang);
+            Console.WriteLine("Dien tich ban dau: " + DTich);
+            Console.WriteLine("Status: " + status);            
         }
-        public void Xuat(string tenkho, string tenkhu, int slx)
+        public void NhapHang()
         {
-            Console.Write("Nhap ten hang: ");
-            TenHang = Console.ReadLine();
+            Hang.NhapHang();
         }
-
+        
     }
+    
+    //public void Xuat(string tenkho, string tenkhu, int slx)
+    //{
+    //    Console.Write("Nhap ten hang: ");
+    //    TenHang = Console.ReadLine();
+    //}
 }
