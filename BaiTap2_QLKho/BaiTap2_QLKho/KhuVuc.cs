@@ -23,6 +23,10 @@ namespace BaiTap2_QLKho
         {
             return status;
         }
+        public string GetTenKhu()
+        {
+            return TenKV;
+        }
         public int GetSLHang()
         {
             return SLHang;
@@ -61,12 +65,6 @@ namespace BaiTap2_QLKho
         {
             Hang.NhapHang();
         }
-        
+          
     }
-    
-    //public void Xuat(string tenkho, string tenkhu, int slx)
-    //{
-    //    Console.Write("Nhap ten hang: ");
-    //    TenHang = Console.ReadLine();
-    //}
 }

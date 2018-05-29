@@ -59,7 +59,7 @@ namespace BaiTap2_QLKho
 
             for (int i = 0; i < kho.Count; i++)
                 for (int j = 0; j < kho[i].kv.Count; j++)
-                    if (tenkho == kho[i].TenKho && tenkhu == kho[i].kv[j].TenKV)
+                    if (tenkho == kho[i].TenKho && tenkhu == kho[i].kv[j].TenKV)                        
                     {
                         kho[i].kv[j].NhapHang();
                         kho[i].kv[j].SetSLHang(kho[i].kv[j].Hang.GetSL());
@@ -92,15 +92,15 @@ namespace BaiTap2_QLKho
             int slx;
             Console.Write("Nhap vao ten hang: ");
             TenHang = Console.ReadLine();
-            //Console.WriteLine("-------------Kho va khu co mat hang muon xuat--------------");
+            Console.WriteLine("-------------Kho va khu co mat hang muon xuat--------------");
 
-            //for (int i = 0; i < kho.Count; i++)
-            //    for (int j = 0; i < kho[i].kv.Count; j++)
-            //        if (TenHang == kho[i].kv[i].Hang.GetTenHang())
-            //        {
-            //            Console.WriteLine("Kho: " + kho[i].GetTenKho());
-            //            kho[i].kv[j].HienThiKhu();
-            //        }
+            for (int i = 0; i < kho.Count; i++)
+                for (int j = 0; j < kho[i].kv.Count; j++)
+                    if (TenHang == kho[i].kv[j].Hang.GetTenHang())
+                    {
+                        Console.WriteLine("Kho: " + kho[i].GetTenKho());
+                        kho[i].kv[j].HienThiKhu();
+                    }
             Console.Write("Nhap vao ten kho: ");
             TenKho = Console.ReadLine();
             Console.Write("Nhap vao ten khu: ");
@@ -108,12 +108,22 @@ namespace BaiTap2_QLKho
             Console.Write("Nhap vao so luong xuat: ");
             slx = Convert.ToInt16(Console.ReadLine());
             for (int i = 0; i < kho.Count; i++)
-                for (int j = 0; i < kho[i].kv.Count; j++)
+                for (int j = 0; j < kho[i].kv.Count; j++)
                     if (kho[i].kv[j].GetSLHang() > slx)
                     {
                         kho[i].kv[j].SetDT(kho[i].kv[j].GetDTich() - slx * kho[i].kv[j].Hang.GetDTCanChua());
                         kho[i].kv[j].SetSLHang(kho[i].kv[j].GetSLHang() - slx);
+                        PhieuXuat px = new PhieuXuat();
+                        px.SetSLXuat(slx);
+                        px.SetTenHang(TenHang);
+                        px.SetViTri("Kho: " + kho[i].GetTenKho() + ",khu" + kho[i].kv[j].GetTenKhu());
+                        kho[i].Phieu.Add(px);
                     }
+                    else Console.WriteLine("Khong du hang de xuat!!!");
+            Console.WriteLine("------------Phieu xuat-------------");
+            for (int i = 0; i < kho.Count; i++)
+                for (int j = 0; j < kho[i].Phieu.Count; j++)
+                    kho[i].Phieu[j].HienThiPhieu();
         }
         private static void Menu()
         {
@@ -126,7 +136,6 @@ namespace BaiTap2_QLKho
                 Console.WriteLine("3. Xem kho hang ");
                 Console.WriteLine("4. List kho hang");
                 Console.WriteLine("5. Xuat kho");
-
 
                 LC = Convert.ToInt16(Console.ReadLine());
 

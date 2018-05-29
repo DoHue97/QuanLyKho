@@ -41,15 +41,16 @@ namespace BaiTap2_QLKho
             Console.Write("Nhap ten hang: ");
             TenHang = Console.ReadLine();
             Console.Write("Nhap so luong hang: ");
-            SLHang = Convert.ToInt32(Console.ReadLine());
+            SLHang += Convert.ToInt32(Console.ReadLine());
             Console.Write("Nhap gia: ");
             Gia = Convert.ToInt32(Console.ReadLine());
             Console.Write("Nhap dien tich can chua: ");
             DTCanChua = Convert.ToInt32(Console.ReadLine());
+            
             if (GetTenHang() == "cpu" || GetTenHang() == "CPU")
             {
                 CPU cpu = new CPU();
-                cpu.NhapCPU();
+                cpu.NhapCPU();    
             }
             if (GetTenHang() == "man hinh" || GetTenHang() == "MAN HINH")
             {

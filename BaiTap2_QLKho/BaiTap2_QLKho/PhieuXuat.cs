@@ -11,7 +11,18 @@ namespace BaiTap2_QLKho
         string TenHang;
         int SLXuat;
         string ViTri;
-
+        public void SetSLXuat(int slx)
+        {
+            SLXuat = slx;
+        }
+        public void SetTenHang(string tenhang)
+        {
+            TenHang = tenhang;
+        }
+        public void SetViTri(string vitri)
+        {
+            ViTri = vitri;
+        }
         public string GetTenHang()
         {
             return TenHang;
