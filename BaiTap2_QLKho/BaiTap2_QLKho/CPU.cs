@@ -15,8 +15,14 @@ namespace BaiTap2_QLKho
         }
         public void NhapCPU()
         {
+            base.NhapHang();
             Console.Write("Nhap ram: ");
             Ram = Convert.ToInt16(Console.ReadLine());
+        }
+        public void GetTTCPU()
+        {
+            base.XuatTTHang();
+            Console.Write(" , Ram: "+ Ram);
         }
     }
 }

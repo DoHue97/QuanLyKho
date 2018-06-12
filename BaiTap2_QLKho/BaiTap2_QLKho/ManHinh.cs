@@ -15,8 +15,14 @@ namespace BaiTap2_QLKho
         }
         public void NhapManHinh()
         {
+            base.NhapHang();
             Console.Write("Nhap kich thuoc: ");
             KichThuoc = Console.ReadLine();
+        }
+        public void XuatTTManHinh()
+        {
+            base.XuatTTHang();
+            Console.Write(" , Kich thuoc: " + KichThuoc);
         }
     }
 }

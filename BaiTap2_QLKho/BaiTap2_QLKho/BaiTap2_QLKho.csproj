@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanPhim.cs" />
     <Compile Include="ManHinh.cs" />
     <Compile Include="CPU.cs" />
     <Compile Include="HangHoa.cs" />

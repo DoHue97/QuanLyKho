@@ -40,16 +40,17 @@ namespace BaiTap2_QLKho
             this.CRong = float.Parse(Console.ReadLine());
             Console.Write("Nhap so luong khu vuc: ");
             this.SLKhu = Convert.ToInt32(Console.ReadLine());
+            
         }
         public void Xem()
         {
             for (int j = 0; j < kv.Count; j++)
                 if (kv[j].KTKVTrong() == false)
                 {
-                    Console.WriteLine("Ten kho " + TenKho);
-                    Console.WriteLine("Chieu dai " + CDai);
-                    Console.WriteLine("Chieu rong " + CRong);
-                    Console.WriteLine("So luong khu vuc " + SLKhu);
+                    Console.Write("Ten kho " + TenKho);
+                    Console.Write(" , Chieu dai " + CDai);
+                    Console.Write(" , Chieu rong " + CRong);
+                    Console.Write(" , So luong khu vuc " + SLKhu+"  ");
                     kv[j].HienThiKhu();
                 }
                 else Console.WriteLine("Khu vuc " + kv[j].TenKV + " trong");
@@ -62,7 +63,7 @@ namespace BaiTap2_QLKho
                     Console.WriteLine("Ten kho " + TenKho);
                     Console.WriteLine("Chieu dai " + CDai);
                     Console.WriteLine("Chieu rong " + CRong);
-                    Console.WriteLine("So luong khu vuc " + SLKhu);
+                    Console.WriteLine("So luong khu vuc " + SLKhu+" ");
                     kv[j].HienThiKhu();
                 }
         }

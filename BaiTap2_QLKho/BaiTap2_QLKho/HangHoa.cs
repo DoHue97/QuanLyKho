@@ -8,9 +8,9 @@ namespace BaiTap2_QLKho
 {
     public class HangHoa
     {
-        public string MaHang;
-        public string TenHang;
-        public int SLHang;
+        string MaHang;
+        string TenHang;
+        int SLHang;
         int Gia;
         public float DTCanChua;
 
@@ -38,25 +38,21 @@ namespace BaiTap2_QLKho
         {
             Console.Write("Nhap ma hang: ");
             MaHang = Console.ReadLine();
-            Console.Write("Nhap ten hang: ");
-            TenHang = Console.ReadLine();
+            
             Console.Write("Nhap so luong hang: ");
-            SLHang += Convert.ToInt32(Console.ReadLine());
-            Console.Write("Nhap gia: ");
-            Gia = Convert.ToInt32(Console.ReadLine());
+            SLHang += Convert.ToInt32(Console.ReadLine());            
             Console.Write("Nhap dien tich can chua: ");
             DTCanChua = Convert.ToInt32(Console.ReadLine());
-            
-            if (GetTenHang() == "cpu" || GetTenHang() == "CPU")
-            {
-                CPU cpu = new CPU();
-                cpu.NhapCPU();    
-            }
-            if (GetTenHang() == "man hinh" || GetTenHang() == "MAN HINH")
-            {
-                ManHinh mh = new ManHinh();
-                mh.NhapManHinh();
-            }
+            Console.Write("Nhap gia: ");
+            Gia = Convert.ToInt32(Console.ReadLine());
+        }
+        public void XuatTTHang()
+        {
+            Console.Write("Ma hang: "+ MaHang);
+            Console.Write(", Ten hang: " + TenHang);
+            Console.Write(" , So luong: " + SLHang);
+            Console.Write(" , Dien tich can chua: " + DTCanChua);
+            Console.Write(" , Gia: " + Gia+"\n");
         }
     }
 }
